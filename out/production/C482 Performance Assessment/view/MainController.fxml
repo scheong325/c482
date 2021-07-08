@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
+   <children>
+      <Label text="Inventory Management System">
+         <padding>
+            <Insets left="25.0" top="25.0" />
+         </padding>
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="500.0" prefWidth="475.0">
+         <children>
+            <StackPane maxWidth="-Infinity" prefWidth="420.0" style="-fx-border-color: black; -fx-border-radius: 10;">
+               <VBox.margin>
+                  <Insets left="36.0" right="19.0" />
+               </VBox.margin>
+               <children>
+                  <TableView fx:id="partTableView" maxHeight="-Infinity" maxWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="400.0" StackPane.alignment="CENTER">
+                    <columns>
+                      <TableColumn fx:id="partIdCol" prefWidth="87.0" text="Part ID" />
+                      <TableColumn fx:id="partNameCol" prefWidth="93.0" text="Part Name" />
+                        <TableColumn fx:id="partInventoryLevelCol" prefWidth="107.0" text="Inventory Level" />
+                        <TableColumn fx:id="partPriceCol" prefWidth="113.0" text="Price/ Cost per unit" />
+                    </columns>
+                     <StackPane.margin>
+                        <Insets bottom="30.0" top="30.0" />
+                     </StackPane.margin>
+                  </TableView>
+                  <Label text="Parts" StackPane.alignment="TOP_LEFT">
+                     <StackPane.margin>
+                        <Insets left="10.0" />
+                     </StackPane.margin>
+                  </Label>
+                  <TextField fx:id="partSearchTxt" maxWidth="-Infinity" prefWidth="150.0" promptText="Search by Part ID or Name " StackPane.alignment="TOP_RIGHT">
+                     <StackPane.margin>
+                        <Insets right="10.0" />
+                     </StackPane.margin>
+                  </TextField>
+                  <ButtonBar maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="10.0" prefWidth="250.0" StackPane.alignment="BOTTOM_RIGHT">
+                    <buttons>
+                      <Button mnemonicParsing="false" onAction="#onActionAddPart" text="Add" />
+                        <Button layoutX="190.0" layoutY="10.0" mnemonicParsing="false" onAction="#onActionModifyPart" text="Modify" />
+                        <Button layoutX="190.0" layoutY="10.0" mnemonicParsing="false" onAction="#onActionDeletePart" text="Delete" />
+                    </buttons>
+                     <StackPane.margin>
+                        <Insets right="10.0" />
+                     </StackPane.margin>
+                  </ButtonBar>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" top="20.0" />
+               </padding>
+            </StackPane>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </VBox>
+      <VBox alignment="CENTER" layoutX="550.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="500.0" prefWidth="475.0" AnchorPane.leftAnchor="475.0">
+         <children>
+            <StackPane maxWidth="-Infinity" prefWidth="420.0" style="-fx-border-color: black; -fx-border-radius: 10;">
+               <children>
+                  <TableView fx:id="productTableView" maxWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="400.0">
+                     <columns>
+                        <TableColumn fx:id="productIdCol" prefWidth="87.0" text="Product ID" />
+                        <TableColumn fx:id="productNameCol" prefWidth="93.0" text="Product Name" />
+                        <TableColumn fx:id="productInventoryLevelCol" prefWidth="107.0" text="Inventory Level" />
+                        <TableColumn fx:id="productPriceCol" prefWidth="113.0" text="Price/ Cost per unit" />
+                     </columns>
+                     <StackPane.margin>
+                        <Insets bottom="30.0" top="30.0" />
+                     </StackPane.margin>
+                  </TableView>
+                  <Label text="Products" StackPane.alignment="TOP_LEFT">
+                     <StackPane.margin>
+                        <Insets left="10.0" />
+                     </StackPane.margin>
+                  </Label>
+                  <TextField fx:id="productSearchTxt" maxWidth="-Infinity" prefWidth="150.0" promptText="Search by Product ID or Name " StackPane.alignment="TOP_RIGHT">
+                     <StackPane.margin>
+                        <Insets right="10.0" />
+                     </StackPane.margin>
+                  </TextField>
+                  <ButtonBar maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="10.0" prefWidth="250.0" StackPane.alignment="BOTTOM_RIGHT">
+                     <buttons>
+                        <Button mnemonicParsing="false" onAction="#onActionAddProduct" text="Add" />
+                        <Button layoutX="190.0" layoutY="10.0" mnemonicParsing="false" onAction="#onActionModifyProduct" text="Modify" />
+                        <Button layoutX="190.0" layoutY="10.0" mnemonicParsing="false" onAction="#onActionDeleteProduct" text="Delete" />
+                     </buttons>
+                     <StackPane.margin>
+                        <Insets right="10.0" />
+                     </StackPane.margin>
+                  </ButtonBar>
+               </children>
+               <VBox.margin>
+                  <Insets left="19.0" right="36.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="20.0" top="20.0" />
+               </padding>
+            </StackPane>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </VBox>
+      <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onActionExit" prefHeight="25.0" prefWidth="70.0" text="Exit" AnchorPane.bottomAnchor="70.0" AnchorPane.rightAnchor="70.0" />
+   </children>
+</AnchorPane>
